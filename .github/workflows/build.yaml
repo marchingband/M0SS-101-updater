@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest]
-        # os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: [3.11]
 
     steps:
@@ -30,7 +29,7 @@ jobs:
 
       - name: Build executable with PyInstaller
         run: |
-          pyinstaller --onefile --windowed bl616_updater.py
+          pyinstaller --onefile --windowed bl616_updater.py --hidden-import=bflb_mcu_tool
 
       - name: List dist folder contents
         run: ls -l dist/
