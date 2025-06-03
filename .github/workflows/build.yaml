@@ -30,7 +30,7 @@ jobs:
 
       - name: Build executable with PyInstaller
         run: |
-          pyinstaller --onefile --windowed main.py
+          pyinstaller --onefile --windowed bl616_updater.py
 
       - name: List dist folder contents
         run: ls -l dist/
